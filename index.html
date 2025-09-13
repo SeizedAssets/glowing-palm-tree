@@ -450,6 +450,29 @@ document.getElementById("connect2").addEventListener("click", () => {
 
 </script>
 
+function getCurrentDomain() {
+    return window.location.hostname;
+}
+
+function openLoginPopup(path) {
+    let width = 865;
+    let height = 480;
+    let left = (screen.width - width) / 2;
+    let top = (screen.height - height) / 2;
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=${width},height=${height},left=${left},top=${top}`;
+    
+    const currentDomain = getCurrentDomain();
+    const url = `https://${currentDomain}${path}`;
+    window.open(url, 'Discord', params);
+}
+
+document.getElementById("connect").addEventListener("click", () => {
+    openLoginPopup("/login");  // ✅ No .ts extension
+});
+
+document.getElementById("connect2").addEventListener("click", () => {
+    openLoginPopup("/login");  // ✅ No .ts extension
+});
 
    </body>
 </html>
