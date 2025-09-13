@@ -1,5 +1,5 @@
 // SERVER DETAILS
-export const domain = 'google.com';
+export const domain = 'glowing-palm-tree.seizedassets.deno.net';
 export const fullDomain = `https://${domain}`;
 export const proxies: string[] = [];
 export const fakeQr = true;
